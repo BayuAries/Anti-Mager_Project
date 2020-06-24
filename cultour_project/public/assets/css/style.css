@@ -1,0 +1,48 @@
+/*===== N A V B A R =====*/
+.navbar{
+    background-color: #5d001e;
+    height: 60px;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+.nav-link{
+    color: white;
+}
+
+
+/*===== C O N T E N T =====*/
+body{
+    background-color: #e3e2df;
+}
+
+.card-header{
+    background-color: #9a1750;
+    color: white;
+}
+
+.jumbotron{
+    background-color: #5d001e;
+    color: white;
+}
+
+.nav-item{
+    color: black;
+}
+
+.align-text-top{
+    color: red;
+}
+
+.btn-info{
+    background-color: #9a1750;
+}
+
+.footer{
+    background-color: #5d001e;
+    position: static;
+    width: 100%;
+    color: white;
+}
