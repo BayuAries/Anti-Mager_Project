@@ -1,13 +1,13 @@
-@extends('index')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <div class='row no-gutters justify-content-center'>
     <div class='card col-12'>
 
         <h3 class='card-header text-center'>MENDAFTARKAN WISATA BUDAYA</h3>
 
-        <form action="/register/wisata/store/{{ Session::get('id') }}" method="post" enctype='multipart/form-data'>
-        {{csrf_field()}}
+        <form action="/register/wisata/store/<?php echo e(Session::get('id')); ?>" method="post" enctype='multipart/form-data'>
+        <?php echo e(csrf_field()); ?>
+
 
             <div class='card-body'>
 
@@ -15,61 +15,61 @@
 
                     <div class='form-group col-4'>
                         <label class='h5'>Nama Wisata <strong class='align-text-top'>*</strong></label>
-                        <input class='form-control' type="text" name='nama_wisata' value="{{ old('nama_wisata') }}">
-                        @if(count($errors->get('nama_wisata')) > 0)
+                        <input class='form-control' type="text" name='nama_wisata' value="<?php echo e(old('nama_wisata')); ?>">
+                        <?php if(count($errors->get('nama_wisata')) > 0): ?>
                             <ul class='alert alert-danger'>
-                                @foreach($errors->get('nama_wisata') as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
+                                <?php $__currentLoopData = $errors->get('nama_wisata'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li><?php echo e($error); ?></li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
-                        @endif
+                        <?php endif; ?>
                     </div>
 
                     <div class='form-group col-4'>
                         <label class='h5'>Kota <strong class='align-text-top'>*</strong></label>
                         <select class='form-control' name="kota">
-                            @foreach($kota as $datakota)
-                                <option value="{{ $datakota->id }}">{{ $datakota->kota }}</option>
-                            @endforeach
+                            <?php $__currentLoopData = $kota; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datakota): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($datakota->id); ?>"><?php echo e($datakota->kota); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                     </div>
 
                     <div class='form-group col-4'>
                         <label class='h5'>Foto Wisata</label>
-                        <input class='form-control' type="file" name='foto_wisata' value="{{ old('foto_wisata') }}">
-                        @if(count($errors->get('foto_wisata')) > 0)
+                        <input class='form-control' type="file" name='foto_wisata' value="<?php echo e(old('foto_wisata')); ?>">
+                        <?php if(count($errors->get('foto_wisata')) > 0): ?>
                             <ul class='alert alert-danger'>
-                                @foreach($errors->get('foto_wisata') as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
+                                <?php $__currentLoopData = $errors->get('foto_wisata'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li><?php echo e($error); ?></li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
-                        @endif
+                        <?php endif; ?>
                     </div>
 
                 </div>
 
                 <div class='form-group'>
                     <label class='h5'>Alamat <strong class='align-text-top'>*</strong></label>
-                    <textarea class='form-control' name="alamat_wisata" rows="3">{{ old('alamat_wisata') }}</textarea>
-                    @if(count($errors->get('alamat_wisata')) > 0)
+                    <textarea class='form-control' name="alamat_wisata" rows="3"><?php echo e(old('alamat_wisata')); ?></textarea>
+                    <?php if(count($errors->get('alamat_wisata')) > 0): ?>
                         <ul class='alert alert-danger'>
-                            @foreach($errors->get('alamat_wisata') as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
+                            <?php $__currentLoopData = $errors->get('alamat_wisata'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li><?php echo e($error); ?></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
-                    @endif
+                    <?php endif; ?>
                 </div>
 
                 <div class='form-group'>
                     <label class='h5'>Deskripsi <strong class='align-text-top'>*</strong></label>
-                    <textarea class='form-control' name="deskripsi_wisata" rows="15">{{ old('deskripsi_wisata') }}</textarea>
-                    @if(count($errors->get('deskripsi_wisata')) > 0)
+                    <textarea class='form-control' name="deskripsi_wisata" rows="15"><?php echo e(old('deskripsi_wisata')); ?></textarea>
+                    <?php if(count($errors->get('deskripsi_wisata')) > 0): ?>
                         <ul class='alert alert-danger'>
-                            @foreach($errors->get('deskripsi_wisata') as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
+                            <?php $__currentLoopData = $errors->get('deskripsi_wisata'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li><?php echo e($error); ?></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
-                    @endif
+                    <?php endif; ?>
                 </div>
 
                 <div class='form-row justify-content-center'>
@@ -108,26 +108,26 @@
                                 <label class="custom-control-label" for='hariminggu'>Minggu</label>
                             </div>
                         </div>
-                        @if(count($errors->get('hari')) > 0)
+                        <?php if(count($errors->get('hari')) > 0): ?>
                             <ul class='alert alert-danger'>
-                                @foreach($errors->get('hari') as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
+                                <?php $__currentLoopData = $errors->get('hari'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li><?php echo e($error); ?></li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
-                        @endif
+                        <?php endif; ?>
                     </div>
 
                     <div class='form-group col-4'>
                         <label class='h5'>Harga Tiket Masuk</label>
-                        <input class='form-control' type="text" name="htm_wisata" value="{{ old('htm_wisata') }}">
+                        <input class='form-control' type="text" name="htm_wisata" value="<?php echo e(old('htm_wisata')); ?>">
                         <label class='small'>*kosongkan bila tidak memiliki biaya masuk</label>
-                        @if(count($errors->get('htm_wisata')) > 0)
+                        <?php if(count($errors->get('htm_wisata')) > 0): ?>
                             <ul class='alert alert-danger'>
-                                @foreach($errors->get('htm_wisata') as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
+                                <?php $__currentLoopData = $errors->get('htm_wisata'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li><?php echo e($error); ?></li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
-                        @endif
+                        <?php endif; ?>
                     </div>
 
                 </div>
@@ -177,4 +177,5 @@
 </div>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\library data koding\Anti-Mager_Project\cultour_project\resources\views/akun/register_wisata.blade.php ENDPATH**/ ?>

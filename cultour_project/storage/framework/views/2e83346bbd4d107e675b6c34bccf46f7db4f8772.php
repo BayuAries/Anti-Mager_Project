@@ -50,6 +50,20 @@
 
                 <?php endif; ?>
             </h5>
+
+            <h5>
+                <?php if($event->htm_event == "gratis"): ?>
+                    Event ini memiliki kuota tidak terbatas
+                <?php else: ?>
+                    <strong>Sisa Kuota : </strong>
+                    <?php if($event->kuota < 1): ?>
+                        Habis
+                    <?php else: ?>
+                        <?php echo e($event->kuota); ?>
+
+                    <?php endif; ?>
+                <?php endif; ?> 
+            </h5>
         </center>
 
         <hr>
@@ -59,7 +73,24 @@
 
         </p>
 
+        <hr>
+
+        <center>
+            <?php if($event->htm_event == "gratis"): ?>
+                    <strong>Event ini tidak menjual tiket</strong> 
+            <?php else: ?>
+                <?php if($event->kuota >= 1): ?>
+                  <div><a class="btn-sm btn-secondary mt-3" href="/form/event/<?php echo e($event->id); ?>">Beli Tiket</a></div>
+                <?php else: ?>
+                  <div><a class="btn-sm btn-secondary mt-3" href="/habis">Beli Tiket</a></div>
+                <?php endif; ?>
+            <?php endif; ?> 
+            
+        </center>
+        
+
     </div>
+
 
 </div>
 

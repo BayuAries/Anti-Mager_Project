@@ -46,6 +46,19 @@
                     Rp{{ $event->htm_event }}
                 @endif
             </h5>
+
+            <h5>
+                @if($event->htm_event == "gratis")
+                    Event ini memiliki kuota tidak terbatas
+                @else
+                    <strong>Sisa Kuota : </strong>
+                    @if($event->kuota < 1)
+                        Habis
+                    @else
+                        {{$event->kuota}}
+                    @endif
+                @endif 
+            </h5>
         </center>
 
         <hr>
@@ -54,7 +67,24 @@
             {{ $event->deskripsi_event }}
         </p>
 
+        <hr>
+
+        <center>
+            @if($event->htm_event == "gratis")
+                    <strong>Event ini tidak menjual tiket</strong> 
+            @else
+                @if($event->kuota >= 1)
+                  <div><a class="btn-sm btn-secondary mt-3" href="/form/event/{{$event->id}}">Beli Tiket</a></div>
+                @else
+                  <div><a class="btn-sm btn-secondary mt-3" href="/habis">Beli Tiket</a></div>
+                @endif
+            @endif 
+            
+        </center>
+        
+
     </div>
+
 
 </div>
 

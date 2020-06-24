@@ -23,7 +23,7 @@
                         <?php endif; ?>
                     </div>
 
-                    <div class="col-7">
+                    <div class="col-6">
                         <a href="/show-event/<?php echo e($data->id); ?>">
                             <h5 class="card-title" style="color: #9a1750">
                                 <strong><?php echo e($data->nama_event); ?></strong>
@@ -45,6 +45,10 @@
 
                             <?php endif; ?>
                         </p>
+                    </div>
+
+                    <div class="col-2">
+                        <a class="btn-sm btn-secondary mt-2" href="/show-event/<?php echo e($data->id); ?>">Beli Tiket</a>
                     </div>
 
                 </div>

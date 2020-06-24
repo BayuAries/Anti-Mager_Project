@@ -181,4 +181,13 @@ class PageController extends Controller
         $event = Event::find($id);
         return view('akun/pengaturan_event', ['event'=>$event]);
     }
+
+
+    #NEW FOR PSI
+    #Menampilkan Halaman Form Tiket
+    public function showFormTiket($id)
+    {
+        $event = Event::find($id);
+        return view('page_event', ['event'=>$event]);
+    }
 }

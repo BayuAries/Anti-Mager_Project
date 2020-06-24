@@ -1,13 +1,13 @@
-@extends('index')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <div class='row no-gutters justify-content-center'>
     <div class='card col-12'>
 
         <h3 class='card-header text-center'>Buat Event</h3>
 
-        <form action="/register/event/store/{{ $wisata->id }}" method="post" enctype='multipart/form-data'>
-        {{csrf_field()}}
+        <form action="/register/event/store/<?php echo e($wisata->id); ?>" method="post" enctype='multipart/form-data'>
+        <?php echo e(csrf_field()); ?>
+
 
             <div class='card-body'>
 
@@ -99,4 +99,5 @@
 </div>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\library data koding\Anti-Mager_Project\cultour_project\resources\views/akun/register_event.blade.php ENDPATH**/ ?>

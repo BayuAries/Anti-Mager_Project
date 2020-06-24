@@ -217,6 +217,7 @@ class AkunController extends Controller
         $event->wisata_id = $id;
         $event->kota_id = $wisata->kota_id;
         $event->status_event = 'belum mulai';
+        $event->kuota = $req->kuota;
         $event->nama_event = $req->nama_event;
         $event->alamat_event = $wisata->alamat_wisata;
         $event->deskripsi_event = $req->deskripsi_event;

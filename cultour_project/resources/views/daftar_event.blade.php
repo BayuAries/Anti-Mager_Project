@@ -24,7 +24,7 @@
                         @endif
                     </div>
 
-                    <div class="col-7">
+                    <div class="col-6">
                         <a href="/show-event/{{ $data->id }}">
                             <h5 class="card-title" style="color: #9a1750">
                                 <strong>{{ $data->nama_event }}</strong>
@@ -43,6 +43,10 @@
                                 Rp{{ $data->htm_event }}
                             @endif
                         </p>
+                    </div>
+
+                    <div class="col-2">
+                        <a class="btn-sm btn-secondary mt-2" href="/show-event/{{ $data->id }}">Beli Tiket</a>
                     </div>
 
                 </div>

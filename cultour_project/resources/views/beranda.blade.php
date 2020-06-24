@@ -73,7 +73,7 @@
 
     <div class='row no-gutters justify-content-center'>
         <a class='btn btn-info col-3 mr-5' href="/daftar-wisata">Temukan Destinasi Wisata Budaya</a>
-        <a class='btn btn-info col-3 ml-5' href="/daftar-wisata">Temukan Event Budaya</a>
+        <a class='btn btn-info col-3 ml-5' href="/daftar-event">Temukan Event Budaya</a>
     </div>
     
 </div>

@@ -77,7 +77,9 @@ Route::get('/profile/pengaturan-wisata/{id}', 'PageController@showPengaturanWisa
 #halaman pengaturan event
 Route::get('/profile/pengaturan-event/{id}', 'PageController@showPengaturanEvent');
 
-
+#Baru PSI
+#Halaman Form Pesan Tiket
+Route::get('/form/event/{id}', 'PageController@showFormTiket');
 
 
 
