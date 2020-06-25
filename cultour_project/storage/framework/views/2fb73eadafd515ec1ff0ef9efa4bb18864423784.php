@@ -1,30 +1,34 @@
 <?php $__env->startSection('content'); ?>
 
+<!-- #==================================================
+     #========== B.A.R.U...P.S.I...ANTI-MAGER ==========
+     #================================================== -->
+
+
 <div class='row no-gutters justify-content-center'>
-    <div class='card col-12'>
+    <div class='card col-12 md-3'>
 
         <h3 class='card-header text-center'>TIKET EVENT</h3>
 
-        <form action="/register/wisata/store/<?php echo e(Session::get('id')); ?>" method="post" enctype='multipart/form-data'>
+        <form action="/beli/tiket/store/<?php echo e($event->id); ?>" method="post" enctype='multipart/form-data'>
         <?php echo e(csrf_field()); ?>
 
 
             <div class='card-body'>
 
-                <div class='form-row'>
-
-                    <div class='form-group col-4'>
-                        <label class='h5'>Nama Pemesan<strong class='align-text-top'>*</strong></label>
-                        <input class='form-control' type="text" name='nama_pemesan' value="<?php echo e(old('nama_pemesan')); ?>">
-                        <?php if(count($errors->get('nama_pemesan')) > 0): ?>
+                <div class='form-row '>
+                    <div class='form-group col-6'>
+                        <label class='h5'>Email<strong class='align-text-top'>*</strong></label>
+                        <input class='form-control' type="email" name="email" value="<?php echo e(old('email')); ?>">
+                        <?php if(count($errors->get('email')) > 0): ?>
                             <ul class='alert alert-danger'>
-                                <?php $__currentLoopData = $errors->get('nama_pemesan'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php $__currentLoopData = $errors->get('email'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <li><?php echo e($error); ?></li>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
                         <?php endif; ?>
                     </div>
-
+<!-- 
                     <div class='form-group col-4'>
                         <label class='h5'>No Telephone<strong class='align-text-top'>*</strong></label>
                         <input class='form-control' type="text" name='no_tlp' value="<?php echo e(old('no_tlp')); ?>">
@@ -35,27 +39,14 @@
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
                         <?php endif; ?>
-                    </div>
+                    </div> -->
 
-                    <div class='form-group col-4'>
+                    <div class='form-group col-6'>
                         <label class='h5'>Jumlah Tiket<strong class='align-text-top'>*</strong></label>
                         <input class='form-control' type="text" name='jumlah_tiket' value="<?php echo e(old('jumlah_tiket')); ?>">
                         <?php if(count($errors->get('jumlah_tiket')) > 0): ?>
                             <ul class='alert alert-danger'>
                                 <?php $__currentLoopData = $errors->get('jumlah_tiket'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <li><?php echo e($error); ?></li>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </ul>
-                        <?php endif; ?>
-                    </div>
-
-                    <div class='form-group col-4'>
-                        <label class='h5'>Harga Tiket Masuk</label>
-                        <input class='form-control' type="text" name="htm_event" value="<?php echo e(old('htm_event')); ?>">
-                        <label class='small'>*kosongkan bila tidak memiliki biaya masuk</label>
-                        <?php if(count($errors->get('htm_event')) > 0): ?>
-                            <ul class='alert alert-danger'>
-                                <?php $__currentLoopData = $errors->get('htm_event'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <li><?php echo e($error); ?></li>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
@@ -94,7 +85,7 @@
                             <!--bagian footer-->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button> | 
-                                <input class='btn btn-primary' type="submit" value="Daftarkan">
+                                <input class='btn btn-primary' type="submit" value="Beli Tiket">
                             </div>
                             
                         </div>
