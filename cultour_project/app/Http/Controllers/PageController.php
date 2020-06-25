@@ -188,6 +188,6 @@ class PageController extends Controller
     public function showFormTiket($id)
     {
         $event = Event::find($id);
-        return view('page_event', ['event'=>$event]);
+        return view('form_tiket', ['event'=>$event]);
     }
 }
