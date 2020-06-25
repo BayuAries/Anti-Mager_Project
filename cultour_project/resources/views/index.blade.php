@@ -92,14 +92,14 @@
         <div class='footer' style='bottom: 0'>
             <br>
             <center>
-                <span style='color: white'><strong>Find Us on:</strong></span><br>
+                <span style='color: white'><strong>Kunjungi Kami Di:</strong></span><br>
                 <span style='color: white'>
                     <a style='color: white' href="#">facebook</a> |
                     <a style='color: white' href="#">twitter</a> |
                     <a style='color: white' href="#">instagaram</a>
                 </span>
                 <h5 class='mt-4' style='color: white'>
-                    Copyright © Anti-Deadline
+                    Copyright © Anti-Mager
                 </h5>
             </center>
             <br>
