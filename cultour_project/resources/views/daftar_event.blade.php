@@ -45,6 +45,10 @@
                         </p>
                     </div>
 
+                    <!-- #==================================================
+                         #========== B.A.R.U...P.S.I...ANTI-MAGER ==========
+                         #================================================== -->
+                         
                     <div class="col-2">
                         <a class="btn-sm btn-secondary mt-2" href="/show-event/{{ $data->id }}">Beli Tiket</a>
                     </div>

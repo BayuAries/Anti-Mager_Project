@@ -46,7 +46,9 @@
                     Rp{{ $event->htm_event }}
                 @endif
             </h5>
-
+            <!-- #==================================================
+                 #========== B.A.R.U...P.S.I...ANTI-MAGER ==========
+                 #================================================== -->
             <h5>
                 @if($event->htm_event == "gratis")
                     Event ini memiliki kuota tidak terbatas
