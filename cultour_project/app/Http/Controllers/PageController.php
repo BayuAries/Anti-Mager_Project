@@ -200,7 +200,7 @@ class PageController extends Controller
     {
         $event = Event::find($id);
         $akun = Akun::where('email','=',$req->email)->get();
-        dd($req->all(), $event, $akun[0]->id);
-// ->htm_event*$req->jumlah_tiket
+        dd($req->all(), $event->htm_event*$req->jumlah_tiket, $akun[0]->id);
+// ->
     }
 }
