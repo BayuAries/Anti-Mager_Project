@@ -50,7 +50,9 @@
 
                 <?php endif; ?>
             </h5>
-
+            <!-- #==================================================
+                 #========== B.A.R.U...P.S.I...ANTI-MAGER ==========
+                 #================================================== -->
             <h5>
                 <?php if($event->htm_event == "gratis"): ?>
                     Event ini memiliki kuota tidak terbatas

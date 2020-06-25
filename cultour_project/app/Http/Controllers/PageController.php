@@ -183,11 +183,24 @@ class PageController extends Controller
     }
 
 
-    #NEW FOR PSI
+
+
+#==================================================
+#========== B.A.R.U...P.S.I...ANTI-MAGER ==========
+#==================================================
+
     #Menampilkan Halaman Form Tiket
     public function showFormTiket($id)
     {
         $event = Event::find($id);
         return view('form_tiket', ['event'=>$event]);
+    }
+
+    public function beliTiket($id, Request $req)
+    {
+        $event = Event::find($id);
+        $akun = Akun::where('email','=',$req->email)->get();
+        dd($req->all(), $event, $akun[0]->id);
+// ->htm_event*$req->jumlah_tiket
     }
 }

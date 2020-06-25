@@ -37,7 +37,7 @@
                 </li>
 
                  <li class="nav-item">
-                    <a class="nav-link" href="/form_tiket">form TIKET</a>
+                    <a class="nav-link" href="/form_tiket">FORM TIKET</a>
                 </li>
 
                 @if(Session::get('login') == TRUE)
