@@ -19,4 +19,13 @@ class Event extends Model
     {
         return $this->belongsTo('App\Kota');
     }
+     #==================================================
+     #========== B.A.R.U...P.S.I...ANTI-MAGER ==========
+     #================================================== 
+    #memiliki banyak data pada tabel tiket
+    public function tiket()
+    {
+        return $this->hasMany('App\Tiket');
+    }
+    
 }

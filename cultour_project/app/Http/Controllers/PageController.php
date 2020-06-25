@@ -196,11 +196,5 @@ class PageController extends Controller
         return view('form_tiket', ['event'=>$event]);
     }
 
-    public function beliTiket($id, Request $req)
-    {
-        $event = Event::find($id);
-        $akun = Akun::where('email','=',$req->email)->get();
-        dd($req->all(), $event->htm_event*$req->jumlah_tiket, $akun[0]->id);
-// ->
-    }
+
 }

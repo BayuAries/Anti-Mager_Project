@@ -19,4 +19,13 @@ class Akun extends Model
     {
         return $this->hasMany('App\Review');
     }
+
+     #==================================================
+     #========== B.A.R.U...P.S.I...ANTI-MAGER ==========
+     #================================================== 
+
+    public function tiket()
+    {
+        return $this->hasMany('App\Tiket');
+    }
 }
