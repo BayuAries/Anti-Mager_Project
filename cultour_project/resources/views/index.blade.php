@@ -36,6 +36,10 @@
                     <a class="nav-link" href="/daftar-event">EVENT</a>
                 </li>
 
+                 <li class="nav-item">
+                    <a class="nav-link" href="/form_tiket">FORM TIKET</a>
+                </li>
+
                 @if(Session::get('login') == TRUE)
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">LOGOUT</a>
