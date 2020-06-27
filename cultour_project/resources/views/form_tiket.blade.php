@@ -11,7 +11,7 @@
 
         <h3 class='card-header text-center'>TIKET EVENT</h3>
 
-        <form action="/beli/tiket/store/{{ $event->id }}" method="post" enctype='multipart/form-data'>
+        <form action="/beli/tiket/store/{{ $event->id }}/{{ Session::get('id') }}" method="post" enctype='multipart/form-data'>
         {{csrf_field()}}
 
             <div class='card-body'>

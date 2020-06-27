@@ -10,7 +10,7 @@
 
         <h3 class='card-header text-center'>TIKET EVENT</h3>
 
-        <form action="/beli/tiket/store/<?php echo e($event->id); ?>" method="post" enctype='multipart/form-data'>
+        <form action="/beli/tiket/store/<?php echo e($event->id); ?>/<?php echo e(Session::get('id')); ?>" method="post" enctype='multipart/form-data'>
         <?php echo e(csrf_field()); ?>
 
 

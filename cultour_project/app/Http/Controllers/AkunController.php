@@ -221,14 +221,15 @@ class AkunController extends Controller
         $event->nama_event = $req->nama_event;
         $event->alamat_event = $wisata->alamat_wisata;
         $event->deskripsi_event = $req->deskripsi_event;
+        $event->kuota = $req->kuota;
 
         $event->tanggal_mulai_event = $req->tanggal_mulai_event;
         if($req->tanggal_selesai_event){
             $event->tanggal_selesai_event = $req->tanggal_selesai_event;
         }
 
-        if($req->htm){
-            $event->htm_event = $req->htm;
+        if($req->htm_event){
+            $event->htm_event = $req->htm_event;
         }else{
             $event->htm_event = 'gratis';
         }

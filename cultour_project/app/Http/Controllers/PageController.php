@@ -11,6 +11,7 @@ use App\Wisata;
 use App\Event;
 use App\Kota;
 use App\Review;
+use App\Tiket;
 
 class PageController extends Controller
 {
@@ -151,7 +152,11 @@ class PageController extends Controller
         if(Session::get('role') == 'wisatawan'){
 
             $wisatawan = Akun::find($id);
-            return view('akun/profile_wisatawan',['wisatawan'=>$wisatawan]);
+            $tiket = Tiket::where('akun_id',$id)->get();
+            $ev_id = Tiket::where('akun_id',$id)->get('event_id');
+            $event = Event::whereIn('id', $ev_id)->get('nama_event');
+            //dd($tiket->all(), $event->all(),$ev_id);
+            return view('akun/profile_wisatawan',['wisatawan'=>$wisatawan, 'tiket'=>$tiket, 'event'=>$event]);
 
         }elseif(Session::get('role') == 'pengelola'){
 
