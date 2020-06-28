@@ -26,7 +26,7 @@
 
                     <div class="col-6">
                         <a href="/show-event/{{ $data->id }}">
-                            <h5 class="card-title" style="color: #9a1750">
+                            <h5 class="card-title" style="color: #800000">
                                 <strong>{{ $data->nama_event }}</strong>
                             </h5>
                         </a>

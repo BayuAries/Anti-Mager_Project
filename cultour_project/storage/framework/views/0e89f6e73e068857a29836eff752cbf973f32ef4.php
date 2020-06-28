@@ -18,10 +18,10 @@
                         <img class="navbar-brand" style='width: 50px' src="/images/logo.png">
                     </li>
                     <li class='nav-item mr-3'>
-                        <h1 style="color: #e3e2df">CULTOUR</h1>
+                        <h1 style="color: #ffff">CULTOUR</h1>
                     </li>
                     <li class='nav-item'>
-                        <h1 style="color: #e3e2df">|</h1>
+                        <h1 style="color: #ffff">|</h1>
                     </li>
                 </ul>
                 </a>
@@ -34,10 +34,6 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="/daftar-event">EVENT</a>
-                </li>
-
-                 <li class="nav-item">
-                    <a class="nav-link" href="/form_tiket">form TIKET</a>
                 </li>
 
                 <?php if(Session::get('login') == TRUE): ?>

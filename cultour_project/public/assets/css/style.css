@@ -1,6 +1,6 @@
 /*===== N A V B A R =====*/
 .navbar{
-    background-color: #5d001e;
+    background-color: #800000;
     height: 60px;
 }
 
@@ -19,12 +19,12 @@ body{
 }
 
 .card-header{
-    background-color: #9a1750;
+    background-color: #800000;
     color: white;
 }
 
 .jumbotron{
-    background-color: #5d001e;
+    background-color: #800000;
     color: white;
 }
 
@@ -37,11 +37,11 @@ body{
 }
 
 .btn-info{
-    background-color: #9a1750;
+    background-color: #800000;
 }
 
 .footer{
-    background-color: #5d001e;
+    background-color: #800000;
     position: static;
     width: 100%;
     color: white;

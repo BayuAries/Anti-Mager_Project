@@ -59,7 +59,7 @@
                     <a style='color: white' href="#">instagaram</a>
                 </span>
                 <h5 class='mt-4' style='color: white'>
-                    Copyright © Anti-Deadline
+                    Copyright © Anti-Mager
                 </h5>
             </center>
             <br>

@@ -83,7 +83,7 @@
 <!--random wisata-->
 <div class=' jumbotron row no-gutters justify-content-center'>
 
-    <h3 class='col-12 text-center'>RANDOM WISATA BUDAYA</h3>
+    <h3 class='col-12 text-center'>WISATA BUDAYA</h3>
     
     <br>
 
@@ -122,7 +122,7 @@
 <!--random event-->
 <div class=' jumbotron row no-gutters justify-content-center'>
 
-    <h3 class='col-12 text-center'>RANDOM EVENT BUDAYA</h3>
+    <h3 class='col-12 text-center'>EVENT BUDAYA</h3>
     
     <br>
 

@@ -25,7 +25,7 @@
 
                     <div class="col-6">
                         <a href="/show-event/<?php echo e($data->id); ?>">
-                            <h5 class="card-title" style="color: #9a1750">
+                            <h5 class="card-title" style="color: #800000">
                                 <strong><?php echo e($data->nama_event); ?></strong>
                             </h5>
                         </a>
@@ -47,6 +47,10 @@
                         </p>
                     </div>
 
+                    <!-- #==================================================
+                         #========== B.A.R.U...P.S.I...ANTI-MAGER ==========
+                         #================================================== -->
+                         
                     <div class="col-2">
                         <a class="btn-sm btn-secondary mt-2" href="/show-event/<?php echo e($data->id); ?>">Beli Tiket</a>
                     </div>
