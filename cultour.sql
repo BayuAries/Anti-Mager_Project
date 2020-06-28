@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2020 at 02:25 PM
+-- Generation Time: Jun 28, 2020 at 07:30 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -106,7 +106,7 @@ INSERT INTO `event` (`id`, `wisata_id`, `kota_id`, `nama_event`, `alamat_event`,
 (13, 7, 1, 'sb sduu gh asd', 'Jalan R A Kartini', 'ftrtrett', '2019-12-27', NULL, 'gratis', 'belum mulai', NULL, '131576509091_foto_wisata.png', '2019-12-16 08:11:31', '2019-12-16 08:11:31'),
 (14, 14, 1, 'Acara Malam Trytinia', 'Jalan Ahmad Yani, dekat Dragon Water Park', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus amet minus quasi magnam. Incidunt magni porro sequi. Saepe expedita impedit labore nostrum odit quidem dolores enim temporibus atque modi veritatis autem placeat, architecto magnam praesentium eius ex rerum. Nostrum assumenda doloribus perferendis minima iure pariatur ad aliquid, exercitationem quod quas, repellendus obcaecati et. Provident veniam soluta illum maxime esse necessitatibus aliquam explicabo, accusamus fuga unde eaque vitae omnis in quae at? Excepturi eligendi ipsa veritatis illum quam pariatur perspiciatis cupiditate vero laudantium minus. Perferendis error officia sint laborum ducimus recusandae ipsa molestiae veritatis assumenda amet esse nostrum ea, id dicta animi sit est, neque ab a aliquid delectus facilis fugit ratione sunt. Corporis dolore accusantium provident vitae officiis non aliquid similique numquam! Mollitia sunt officiis eaque necessitatibus debitis repellendus sapiente minima, accusamus impedit. Veritatis, pariatur temporibus placeat impedit soluta minus? Quasi ipsum ea eos animi laboriosam ex explicabo alias minima ad beatae molestiae nulla cumque illo laudantium reprehenderit vitae repudiandae, impedit architecto quibusdam culpa dolore repellat sequi qui? Inventore ab doloribus nisi possimus eaque mollitia dolore, doloremque quaerat distinctio nulla aspernatur eligendi sequi? Nostrum culpa minus, temporibus, est id, odit velit ullam eum delectus voluptatum ea expedita praesentium exercitationem deleniti nesciunt quaerat porro harum eius tenetur sint dignissimos at. Mollitia delectus corrupti illo aperiam modi sint, cum dolor vero deleniti repudiandae accusamus explicabo eos maxime exercitationem quidem adipisci saepe ad. Quae suscipit sit consequatur molestias neque praesentium velit qui, commodi, culpa soluta autem molestiae fugit, ex quaerat aspernatur iure veritatis maxime minima recusandae dolor. Dolorem sed odit maxime eaque, mollitia ea quis distinctio consectetur nam voluptas praesentium labore tenetur ipsam, eius unde consequatur expedita perspiciatis placeat! Maiores tempora ab eligendi dolorum totam debitis ut? Asperiores, culpa. Architecto repellendus cum explicabo, temporibus ipsam eaque quos at fugiat nihil tempore suscipit eum qui hic delectus dolorem eveniet assumenda? Nemo delectus assumenda voluptatibus quas, neque necessitatibus pariatur rem deleniti ipsa provident possimus dicta id consectetur? Facilis, rerum.', '2019-12-31', NULL, 'gratis', 'belum mulai', NULL, '141576510992_foto_wisata.png', '2019-12-16 08:43:12', '2019-12-16 08:43:12'),
 (15, 15, 1, 'Joged Jojo', 'Jalan Nglanjaran, Hutan Timur Laut', 'ehsf hh fw hf uidsfkjda  uew', '2020-01-04', NULL, 'gratis', 'sedang berlangsung', NULL, NULL, '2019-12-16 13:23:52', '2019-12-16 13:24:06'),
-(20, 27, 1, 'dd', 'jalan di coba', 'ddd', '2020-06-25', '2020-06-26', 'gratis', 'belum mulai', 500, NULL, '2020-06-24 03:11:31', '2020-06-24 03:11:31');
+(22, 27, 1, 'baru', 'jalan di coba', 'baruuu', '2020-06-30', '2020-07-01', '50000', 'belum mulai', 30, NULL, '2020-06-26 19:39:15', '2020-06-26 19:39:15');
 
 -- --------------------------------------------------------
 
@@ -158,7 +158,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2019_12_04_193049_create_wisatas_table', 1),
 (3, '2019_12_04_193111_create_events_table', 2),
 (4, '2019_12_04_193138_create_reviews_table', 2),
-(5, '2019_12_05_085142_create_kotas_table', 2);
+(5, '2019_12_05_085142_create_kotas_table', 2),
+(8, '2020_06_27_025018_create_tiket_table', 3);
 
 -- --------------------------------------------------------
 
@@ -207,14 +208,28 @@ INSERT INTO `review` (`id`, `wisata_id`, `akun_id`, `akun_nama`, `review`, `crea
 --
 
 CREATE TABLE `tiket` (
-  `id` int(11) NOT NULL,
-  `pembeli_id` int(11) NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `akun_id` int(11) NOT NULL,
   `event_id` int(11) NOT NULL,
   `jumlah_tiket` int(11) NOT NULL,
-  `banyak_tiket` int(11) NOT NULL,
-  `total_bayar` int(20) NOT NULL,
-  `status` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `harga_tiket` int(11) NOT NULL,
+  `total_bayar` int(11) NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tiket`
+--
+
+INSERT INTO `tiket` (`id`, `akun_id`, `event_id`, `jumlah_tiket`, `harga_tiket`, `total_bayar`, `status`, `created_at`, `updated_at`) VALUES
+(1, 35, 7, 6, 15000, 90000, 'Pembayaran', '2020-06-26 21:34:08', '2020-06-26 21:34:08'),
+(2, 35, 22, 99, 50000, 4950000, 'Pembayaran', '2020-06-26 21:36:55', '2020-06-26 21:36:55'),
+(3, 35, 22, 0, 50000, 0, 'Pembayaran', '2020-06-26 21:38:47', '2020-06-26 21:38:47'),
+(4, 35, 22, 0, 50000, 0, 'Pembayaran', '2020-06-26 21:41:09', '2020-06-26 21:41:09'),
+(5, 36, 22, 6, 50000, 300000, 'Pembayaran', '2020-06-26 21:52:14', '2020-06-26 21:52:14'),
+(6, 36, 7, 9, 15000, 135000, 'Pembayaran', '2020-06-26 21:58:52', '2020-06-26 21:58:52');
 
 -- --------------------------------------------------------
 
@@ -320,7 +335,7 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `kota`
@@ -332,13 +347,19 @@ ALTER TABLE `kota`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `tiket`
+--
+ALTER TABLE `tiket`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `wisata`
