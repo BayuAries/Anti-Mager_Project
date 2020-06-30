@@ -152,17 +152,21 @@ class PageController extends Controller
         if(Session::get('role') == 'wisatawan'){
 
             $wisatawan = Akun::find($id);
-            $tiket = Tiket::where('akun_id',$id)->get();
-            $ev_id = Tiket::where('akun_id',$id)->get('event_id');
-            $event = Event::whereIn('id', $ev_id)->get('nama_event');
-            //dd($tiket->all(), $event->all(),$ev_id);
-            return view('akun/profile_wisatawan',['wisatawan'=>$wisatawan, 'tiket'=>$tiket, 'event'=>$event]);
+            // $tiket = Tiket::where('akun_id',$id)->get();
+            $ev_id = Tiket::whereIn('akun_id',$wisatawan->tiket)->get('event_id');
+            $event = Event::select('id','nama_event')->whereIn('id', $ev_id)->get();
+            // dd($event); 
+            return view('akun/profile_wisatawan',['wisatawan'=>$wisatawan, 'event'=>$event]);
 
         }elseif(Session::get('role') == 'pengelola'){
 
             $pengelola = Akun::find($id);
-            return view('akun/profile_pengelola', ['pengelola'=>$pengelola]);
-
+            $event = Event::select('id')->whereIn('wisata_id', $pengelola->wisata->event)->get();
+            // $ti = Tiket::groupBy('event_id')->where('event_id', 22)->sum('total_bayar');
+            $tiket = Tiket::groupBy('event_id')->selectRaw('event_id ,sum(jumlah_tiket) as jumlah, sum(total_bayar)*0.9 as total')->whereIn('event_id', $event)->get();
+            // dd($event,$tiket->all());
+            return view('akun/profile_pengelola', ['pengelola'=>$pengelola, 'tiket'=>$tiket]);
+            //dd($pengelola->wisata->event);
         }
     }
 

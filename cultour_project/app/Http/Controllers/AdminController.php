@@ -11,6 +11,7 @@ use App\Wisata;
 use App\Kota;
 use App\Event;
 use App\Review;
+use App\Tiket;
 
 class AdminController extends Controller
 {
@@ -241,5 +242,15 @@ class AdminController extends Controller
         $review->delete();
 
         return redirect()->back()->with('alert', 'Review telah dihapus.');
+    }
+
+
+
+
+    public function showPendapatan()
+    {
+        $tiket = Tiket::groupBy('event_id')->selectRaw('event_id ,sum(jumlah_tiket) as jumlah, sum(total_bayar)*0.1 as total')->get();
+        // dd($tiket);
+        return view('admin.pendapatan',['tiket'=>$tiket]);
     }
 }

@@ -278,6 +278,36 @@
 
     </div>
 
+    <!-- Laporan Penjualan -->
+    <div class='card'>
+        <h3 class='card-header'>Penjualan Tiket Event</h3>
+    <div class='card-body'>
+
+        <div class="card mt-2">
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Nama Event</th>
+                  <th scope="col">Jumlah Tiket Terjual</th>
+                  <th scope="col">Total Pendapatan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach($tiket as $test => $ranjang)
+                    <tr>
+                      <th scope="row">{{$loop->iteration}}</th>
+                      <td>{{$ranjang->event->nama_event}}</td>
+                      <td>{{$ranjang->jumlah}}</td>
+                      <td>{{$ranjang->total}}</td>
+                    </tr>
+                   @endforeach
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 
     <!--review-->
     <div class='card col-12'>

@@ -28,6 +28,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="/pendapatan-admin">PENDAPATAN</a> 
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="/review-admin">REVIEW</a> 
                 </li>
 

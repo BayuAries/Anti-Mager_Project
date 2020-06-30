@@ -219,3 +219,5 @@ Route::get('/hapus-review-admin/{id}', 'AdminController@hapusReview');
 Route::get('/form/event/{id}', 'PageController@showFormTiket');
 
 Route::post('/beli/tiket/store/{id}/{akun_id}', 'TiketController@beliTiket');
+
+Route::get('/pendapatan-admin', 'AdminController@showPendapatan');

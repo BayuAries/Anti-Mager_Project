@@ -72,10 +72,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($tiket as $test => $ranjang)
+                  @foreach($wisatawan->tiket as $test => $ranjang)
                     <tr>
                       <th scope="row">{{$loop->iteration}}</th>
-                      <td>{{$event[$test]->nama_event}} </td>
+                      <td>{{$ranjang->event->nama_event}}</td>
                       <td>{{$ranjang->jumlah_tiket}}</td>
                       <td>{{$ranjang->harga_tiket}}</td>
                       <td>{{$ranjang->total_bayar}}</td>

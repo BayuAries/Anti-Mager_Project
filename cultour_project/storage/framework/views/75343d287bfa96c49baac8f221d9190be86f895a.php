@@ -285,6 +285,36 @@
 
     </div>
 
+    <!-- Laporan Penjualan -->
+    <div class='card'>
+        <h3 class='card-header'>Penjualan Tiket Event</h3>
+    <div class='card-body'>
+
+        <div class="card mt-2">
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Nama Event</th>
+                  <th scope="col">Jumlah Tiket Terjual</th>
+                  <th scope="col">Total Pendapatan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php $__currentLoopData = $tiket; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $test => $ranjang): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <tr>
+                      <th scope="row"><?php echo e($loop->iteration); ?></th>
+                      <td><?php echo e($ranjang->event->nama_event); ?></td>
+                      <td><?php echo e($ranjang->jumlah); ?></td>
+                      <td><?php echo e($ranjang->total); ?></td>
+                    </tr>
+                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 
     <!--review-->
     <div class='card col-12'>

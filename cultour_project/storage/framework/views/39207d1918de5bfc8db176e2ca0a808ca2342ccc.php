@@ -71,10 +71,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <?php $__currentLoopData = $tiket; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $test => $ranjang): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                  <?php $__currentLoopData = $wisatawan->tiket; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $test => $ranjang): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
                       <th scope="row"><?php echo e($loop->iteration); ?></th>
-                      <td><?php echo e($event[$test]->nama_event); ?> </td>
+                      <td><?php echo e($ranjang->event->nama_event); ?></td>
                       <td><?php echo e($ranjang->jumlah_tiket); ?></td>
                       <td><?php echo e($ranjang->harga_tiket); ?></td>
                       <td><?php echo e($ranjang->total_bayar); ?></td>

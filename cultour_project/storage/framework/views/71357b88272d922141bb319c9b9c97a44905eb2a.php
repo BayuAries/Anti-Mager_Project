@@ -25,7 +25,7 @@
 
                     <div class="col-7">
                         <a href="/show-wisata/<?php echo e($data->id); ?>">
-                            <h5 class="card-title" style="color: #9a1750">
+                            <h5 class="card-title" style="color: #800000">
                                 <strong><?php echo e($data->nama_wisata); ?></strong>
                             </h5>
                         </a>
