@@ -71,6 +71,7 @@
 
         <hr>
 
+    @if(Session::get('login') == TRUE)
         <center>
             @if($event->htm_event == "gratis")
                     <strong>Event ini tidak menjual tiket</strong> 
@@ -83,7 +84,12 @@
             @endif 
             
         </center>
-        
+
+    @else
+        <center>
+            <strong>Tiket Hanya Dapat dibeli Ketika Anda Telah Mendaftar</strong> 
+        </center>    
+    @endif  
 
     </div>
 

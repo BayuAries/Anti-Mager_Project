@@ -61,11 +61,7 @@
                     <td>{{ $data->total }}</td>
                     <td>
                         <!--tombol buka wisata budaya-->
-                        <a class="btn btn-primary" href="/show-event/{{ $data->id }}">BUKA</a> | 
-
-                        <!--tombol modal-->
-                        <button class="btn btn-danger" data-toggle="modal" data-target="#modalHapusAkun{{ $data->id }}">HAPUS</button>
-
+                        <a class="btn btn-primary" href="/show-event/{{ $data->event_id }}">BUKA</a>
                     </td>
                 </tr>
                 @endforeach

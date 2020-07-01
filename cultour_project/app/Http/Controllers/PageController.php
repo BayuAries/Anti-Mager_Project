@@ -73,7 +73,7 @@ class PageController extends Controller
     #menampilkan daftar event berdasarkan kota yang dipilih
     public function showDaftarEvent()
     {
-        $event = Event::paginate(10);
+        $event = Event::orderBy('created_at', 'DESC')->paginate(10);
         $kota = Kota::all()->sortBy('kota');
         return view('daftar_event', ['event'=>$event, 'kota'=>$kota]);
     }

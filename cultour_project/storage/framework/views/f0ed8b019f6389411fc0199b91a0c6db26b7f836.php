@@ -62,11 +62,7 @@
                     <td><?php echo e($data->total); ?></td>
                     <td>
                         <!--tombol buka wisata budaya-->
-                        <a class="btn btn-primary" href="/show-event/<?php echo e($data->id); ?>">BUKA</a> | 
-
-                        <!--tombol modal-->
-                        <button class="btn btn-danger" data-toggle="modal" data-target="#modalHapusAkun<?php echo e($data->id); ?>">HAPUS</button>
-
+                        <a class="btn btn-primary" href="/show-event/<?php echo e($data->event_id); ?>">BUKA</a> | 
                     </td>
                 </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -77,6 +77,7 @@
 
         <hr>
 
+    <?php if(Session::get('login') == TRUE): ?>
         <center>
             <?php if($event->htm_event == "gratis"): ?>
                     <strong>Event ini tidak menjual tiket</strong> 
@@ -89,7 +90,12 @@
             <?php endif; ?> 
             
         </center>
-        
+
+    <?php else: ?>
+        <center>
+            <strong>Tiket Hanya Dapat dibeli Ketika Anda Telah Mendaftar</strong> 
+        </center>    
+    <?php endif; ?>  
 
     </div>
 
