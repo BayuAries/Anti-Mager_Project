@@ -213,7 +213,7 @@
         <div class="card-body">
 
             <?php $__currentLoopData = $pengelola->wisata->event; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="card mt-3"">
+            <div class="card mt-3">
 
                 <?php if($data->foto_event): ?>
                     <img class="card-img-top" src="/images/foto_event/<?php echo e($data->foto_event); ?>">
@@ -298,6 +298,7 @@
                   <th scope="col">Nama Event</th>
                   <th scope="col">Jumlah Tiket Terjual</th>
                   <th scope="col">Total Pendapatan</th>
+                  <th scope="col">OPSI</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -307,6 +308,10 @@
                       <td><?php echo e($ranjang->event->nama_event); ?></td>
                       <td><?php echo e($ranjang->jumlah); ?></td>
                       <td><?php echo e($ranjang->total); ?></td>
+                      <td>
+                          <!--tombol buka wisata budaya-->
+                        <a class="btn btn-primary" href="/show-detail/<?php echo e($ranjang->event->id); ?>">DETAIL</a>
+                      </td>
                     </tr>
                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </tbody>

@@ -46,7 +46,7 @@
             <?php endif; ?>
 
             <br>
-
+            <?php $sum = 0; ?>
             <table class="table">
                 <tr>
                     <th>NAMA EVENT</th>
@@ -62,12 +62,23 @@
                     <td><?php echo e($data->total); ?></td>
                     <td>
                         <!--tombol buka wisata budaya-->
-                        <a class="btn btn-primary" href="/show-event/<?php echo e($data->event_id); ?>">BUKA</a> | 
+                        <a class="btn btn-primary" href="/show-event/<?php echo e($data->event_id); ?>">BUKA</a>
                     </td>
                 </tr>
+                <?php $sum += $data->total ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
             </table>
+            <br>
+            <div>
+                <strong>
+                    <h3>
+                        Total Pendapatan dari Seluruh Event : <?php echo e($sum); ?>
+
+                    </h3>
+                    
+                </strong>             
+            </div>
 
 
         </div>

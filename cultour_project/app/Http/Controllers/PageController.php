@@ -206,5 +206,15 @@ class PageController extends Controller
         return view('form_tiket', ['event'=>$event]);
     }
 
+    public function showPenjualan($id)
+    {
+        // $pengelola = Akun::find($id);
+        // $event = Event::select('id')->whereIn('wisata_id', $pengelola->wisata->event)->get();
+        // $ti = Tiket::groupBy('event_id')->where('event_id', 22)->sum('total_bayar');
+        $tiket = Tiket::groupBy('event_id')->selectRaw('event_id ,sum(jumlah_tiket) as jumlah, sum(total_bayar)*0.9 as total')->where('event_id', $id)->get();
+        // dd($tiket->all());
+        return view('akun/detail_penjualan', ['tiket'=>$tiket]);
+    }
+
 
 }

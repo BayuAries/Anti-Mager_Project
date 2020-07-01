@@ -209,7 +209,7 @@
         <div class="card-body">
 
             @foreach($pengelola->wisata->event as $data)
-            <div class="card mt-3"">
+            <div class="card mt-3">
 
                 @if($data->foto_event)
                     <img class="card-img-top" src="/images/foto_event/{{ $data->foto_event }}">
@@ -291,6 +291,7 @@
                   <th scope="col">Nama Event</th>
                   <th scope="col">Jumlah Tiket Terjual</th>
                   <th scope="col">Total Pendapatan</th>
+                  <th scope="col">OPSI</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -300,6 +301,10 @@
                       <td>{{$ranjang->event->nama_event}}</td>
                       <td>{{$ranjang->jumlah}}</td>
                       <td>{{$ranjang->total}}</td>
+                      <td>
+                          <!--tombol buka wisata budaya-->
+                        <a class="btn btn-primary" href="/show-detail/{{ $ranjang->event->id }}">DETAIL</a>
+                      </td>
                     </tr>
                    @endforeach
                   </tbody>

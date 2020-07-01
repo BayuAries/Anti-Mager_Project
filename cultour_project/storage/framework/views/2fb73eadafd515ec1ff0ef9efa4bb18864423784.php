@@ -54,6 +54,12 @@
                     </div>
 
                 </div>
+                         <?php if(\Session::has('alert')): ?>
+                            <div class="alert alert-danger">
+                                <?php echo e(Session::get('alert')); ?>
+
+                            </div>
+                        <?php endif; ?>
 
             </div>
 

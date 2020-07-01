@@ -22,27 +22,39 @@ class TiketController extends Controller
         $event = Event::find($id);
         $akun = Akun::find($akun_id);
         //dd($req->all(), $event->htm_event*$req->jumlah_tiket, $akun->id, $id);
+        
 
-        $messages = [
-            'required' => ':attribute harap diisi',
-            'max' => ':Pembelian maksimal 9 tiket',
-            'min'=>'Minimal Pembelian 1 tiket'
-        ];
-        $this->validate($req,[
-            'jumlah_tiket' => 'required|max:1|min:1',
-        ], $messages);
+        // dd($event->sisa_kuota);
 
-        $tiket = new Tiket();
+        if($event->sisa_kuota >= $req->jumlah_tiket){
+            $messages = [
+                'required' => ':attribute harap diisi',
+                'max' => ':Pembelian maksimal 9 tiket',
+                'min'=>'Minimal Pembelian 1 tiket'
+            ];
+            $this->validate($req,[
+                'email' => 'required',
+                'jumlah_tiket' => 'required|max:1|min:1',
+            ], $messages);
 
-     	$tiket->akun_id = $akun->id;
-     	$tiket->event_id = $id;
-     	$tiket->jumlah_tiket = $req->jumlah_tiket;
-     	$tiket->harga_tiket = $event->htm_event;
-     	$tiket->total_bayar = $event->htm_event*$req->jumlah_tiket;
-     	$tiket->status = 'Pembayaran';
+            $tiket = new Tiket();
 
-     	$tiket->save();
+            $tiket->akun_id = $akun->id;
+            $tiket->event_id = $id;
+            $tiket->jumlah_tiket = $req->jumlah_tiket;
+            $tiket->harga_tiket = $event->htm_event;
+            $tiket->total_bayar = $event->htm_event*$req->jumlah_tiket;
+            $tiket->status = 'Pembayaran';
 
-     	return redirect('/profile/'.$akun->id);
+            //kurangi kuota sekarang
+            $event->sisa_kuota = $event->sisa_kuota - $req->jumlah_tiket;
+
+            $tiket->save();
+            $event->save();
+            return redirect('/profile/'.$akun->id);
+        }elseif ($event->sisa_kuota < $req->jumlah_tiket) {
+            return redirect()->back()->with('alert', 'Jumlah kuota tidak mencukupi sisa kuota : '.$event->sisa_kuota);
+        }
+
     }
 }

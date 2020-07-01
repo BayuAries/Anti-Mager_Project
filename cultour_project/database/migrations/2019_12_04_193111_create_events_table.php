@@ -25,6 +25,7 @@ class CreateEventsTable extends Migration
             $table->string('htm_event');
             $table->enum('status_event',['belum mulia', 'sedang berlangsung', 'selesai']);
             $table->integer('kuota');
+            $table->integer('sisa_kuota');
             $table->string('foto_event');
             $table->timestamps();
         });

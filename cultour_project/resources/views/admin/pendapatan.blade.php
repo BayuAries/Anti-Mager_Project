@@ -45,7 +45,7 @@
             @endif
 
             <br>
-
+            <?php $sum = 0; ?>
             <table class="table">
                 <tr>
                     <th>NAMA EVENT</th>
@@ -64,9 +64,19 @@
                         <a class="btn btn-primary" href="/show-event/{{ $data->event_id }}">BUKA</a>
                     </td>
                 </tr>
+                <?php $sum += $data->total ?>
                 @endforeach
 
             </table>
+            <br>
+            <div>
+                <strong>
+                    <h3>
+                        Total Pendapatan dari Seluruh Event : {{$sum}}
+                    </h3>
+                    
+                </strong>             
+            </div>
 
 
         </div>

@@ -58,10 +58,10 @@
                     Event ini memiliki kuota tidak terbatas
                 <?php else: ?>
                     <strong>Sisa Kuota : </strong>
-                    <?php if($event->kuota < 1): ?>
+                    <?php if($event->sisa_kuota < 1): ?>
                         Habis
                     <?php else: ?>
-                        <?php echo e($event->kuota); ?>
+                        <?php echo e($event->sisa_kuota); ?>
 
                     <?php endif; ?>
                 <?php endif; ?> 

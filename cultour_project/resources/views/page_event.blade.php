@@ -54,10 +54,10 @@
                     Event ini memiliki kuota tidak terbatas
                 @else
                     <strong>Sisa Kuota : </strong>
-                    @if($event->kuota < 1)
+                    @if($event->sisa_kuota < 1)
                         Habis
                     @else
-                        {{$event->kuota}}
+                        {{$event->sisa_kuota}}
                     @endif
                 @endif 
             </h5>
