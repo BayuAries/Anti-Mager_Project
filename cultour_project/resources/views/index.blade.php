@@ -92,7 +92,7 @@
         <div class='footer' style='bottom: 0'>
             <br>
             <center>
-                <span style='color: white'><strong>Kunjungi Kami Di:</strong></span><br>
+                <span style='color: white'><strong>Kunjungi Kami Di :</strong></span><br>
                 <span style='color: white'>
                     <a style='color: white' href="#">facebook</a> |
                     <a style='color: white' href="#">twitter</a> |
