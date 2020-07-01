@@ -149,6 +149,7 @@ class PageController extends Controller
     #menampilkan halaman profile
     public function showProfile($id)
     {
+        //EDIT FOR PSI ANTI - MAGER
         if(Session::get('role') == 'wisatawan'){
 
             $wisatawan = Akun::find($id);
