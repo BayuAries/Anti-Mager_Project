@@ -177,13 +177,18 @@ class PageController extends Controller
 
                     // dd($event->all(),$tiket->all());
 
-                    if (is_null($tiket->first())) {
+                    if ($tiket->isEmpty()) {
                         $event = Event::select('id')->whereIn('id', $pengelola->wisata->event)->get();
                         $tiket = Tiket::groupBy('event_id')->selectRaw('event_id ,sum(jumlah_tiket) as jumlah, sum(total_bayar)*0.9 as total')->whereIn('event_id', $event)->get();
 
                         $kategori = [];
                         $penjualan = [];
-                        // dd('tidak ada tiket',$event,$tiket,$penjualan);
+                                                foreach ($tiket as $key) {
+                            $kategori[] = $key->event->nama_event;
+                            $penjualan[] = $key->jumlah;
+                        }
+                        $penjualan = array_map('intval', $penjualan);
+                        // dd('tidak ada tiket',$event,$tiket,$kategori,$penjualan);
                         return view('akun/profile_pengelola', ['pengelola'=>$pengelola, 'tiket'=>$tiket, 'kategori'=>$kategori, 'penjualan'=>$penjualan]);
                     }elseif($tiket){
                         $event = Event::select('id')->whereIn('wisata_id', $pengelola->wisata->event)->get();
@@ -196,7 +201,7 @@ class PageController extends Controller
                         }
                         $penjualan = array_map('intval', $penjualan);
                         // dd($pengelola->wisata->event->first(),$event,$tiket);
-                        // dd('ada tiket',$event,$tiket,$penjualan);
+                        // dd('ada tiket',$event,$tiket,$kategori,$penjualan);
                         return view('akun/profile_pengelola', ['pengelola'=>$pengelola, 'tiket'=>$tiket, 'kategori'=>$kategori, 'penjualan'=>$penjualan]);
                     }
 
