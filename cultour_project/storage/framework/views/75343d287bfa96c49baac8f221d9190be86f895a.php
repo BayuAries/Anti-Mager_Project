@@ -285,6 +285,7 @@
 
     </div>
 
+    <?php if($tiket): ?>
     <!-- Laporan Penjualan -->
     <div class='card'>
         <h3 class='card-header'>Penjualan Tiket Event</h3>
@@ -330,7 +331,7 @@
             </div>
         </div>
     </div>
-
+    <?php endif; ?>
 
     <!--review-->
     <div class='card col-12'>
@@ -400,42 +401,44 @@
 
 <?php $__env->startSection('footer'); ?>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-<script type="">
-    Highcharts.chart('chartPenjualan', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Laporan Penjualan Tiket Event'
-        },
-        xAxis: {
-            categories: <?php echo json_encode($kategori); ?>,
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
+   <?php if($tiket): ?>
+    <script type="">
+        Highcharts.chart('chartPenjualan', {
+            chart: {
+                type: 'bar'
+            },
             title: {
-                text: 'Banyak Tiket'
-            }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: 'Tiket Terjual',
-            data: <?php echo json_encode($penjualan); ?>
+                text: 'Laporan Penjualan Tiket Event'
+            },
+            xAxis: {
+                categories: <?php echo json_encode($kategori); ?>,
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Banyak Tiket'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Tiket Terjual',
+                data: <?php echo json_encode($penjualan); ?>
 
-        }]
-});
-</script>
+            }]
+    });
+    </script>
+    <?php endif; ?>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\library data koding\Anti-Mager_Project\cultour_project\resources\views/akun/profile_pengelola.blade.php ENDPATH**/ ?>

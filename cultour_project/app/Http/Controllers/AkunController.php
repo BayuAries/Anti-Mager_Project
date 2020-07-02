@@ -222,6 +222,7 @@ class AkunController extends Controller
         $event->alamat_event = $wisata->alamat_wisata;
         $event->deskripsi_event = $req->deskripsi_event;
         $event->kuota = $req->kuota;
+        $event->sisa_kuota = $req->kuota;
 
         $event->tanggal_mulai_event = $req->tanggal_mulai_event;
         if($req->tanggal_selesai_event){

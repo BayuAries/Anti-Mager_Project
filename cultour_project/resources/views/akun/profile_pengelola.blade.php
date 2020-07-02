@@ -278,6 +278,7 @@
 
     </div>
 
+    @if($tiket)
     <!-- Laporan Penjualan -->
     <div class='card'>
         <h3 class='card-header'>Penjualan Tiket Event</h3>
@@ -323,7 +324,7 @@
             </div>
         </div>
     </div>
-
+    @endif
 
     <!--review-->
     <div class='card col-12'>
@@ -390,40 +391,42 @@
 
 @section('footer')
     <script src="https://code.highcharts.com/highcharts.js"></script>
-<script type="">
-    Highcharts.chart('chartPenjualan', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Laporan Penjualan Tiket Event'
-        },
-        xAxis: {
-            categories: {!!json_encode($kategori)!!},
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
+   @if($tiket)
+    <script type="">
+        Highcharts.chart('chartPenjualan', {
+            chart: {
+                type: 'bar'
+            },
             title: {
-                text: 'Banyak Tiket'
-            }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: 'Tiket Terjual',
-            data: {!!json_encode($penjualan)!!}
-        }]
-});
-</script>
+                text: 'Laporan Penjualan Tiket Event'
+            },
+            xAxis: {
+                categories: {!!json_encode($kategori)!!},
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Banyak Tiket'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Tiket Terjual',
+                data: {!!json_encode($penjualan)!!}
+            }]
+    });
+    </script>
+    @endif
 @endsection
