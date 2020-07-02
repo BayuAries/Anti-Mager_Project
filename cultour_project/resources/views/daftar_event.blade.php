@@ -16,7 +16,7 @@
             @foreach($event as $data)
             <div class="card mt-3" style="max-width: 750px">
 
-                <div class="row no-gutters p-2">
+                <div class="row no-gutters p-3">
 
                     <div class="col-4 mr-3">
                         @if($data->foto_event)

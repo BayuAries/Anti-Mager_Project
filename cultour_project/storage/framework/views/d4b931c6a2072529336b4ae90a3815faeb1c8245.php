@@ -15,7 +15,7 @@
             <?php $__currentLoopData = $event; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="card mt-3" style="max-width: 750px">
 
-                <div class="row no-gutters p-2">
+                <div class="row no-gutters p-3">
 
                     <div class="col-4 mr-3">
                         <?php if($data->foto_event): ?>

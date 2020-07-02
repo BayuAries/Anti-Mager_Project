@@ -163,10 +163,20 @@ class PageController extends Controller
 
             $pengelola = Akun::find($id);
             $event = Event::select('id')->whereIn('wisata_id', $pengelola->wisata->event)->get();
-            // $ti = Tiket::groupBy('event_id')->where('event_id', 22)->sum('total_bayar');
+            // $ev = Event::select('nama_event')->whereIn('wisata_id', $pengelola->wisata->event)->get();
             $tiket = Tiket::groupBy('event_id')->selectRaw('event_id ,sum(jumlah_tiket) as jumlah, sum(total_bayar)*0.9 as total')->whereIn('event_id', $event)->get();
-            // dd($event,$tiket->all());
-            return view('akun/profile_pengelola', ['pengelola'=>$pengelola, 'tiket'=>$tiket]);
+            // dd($event, $tiket,$ev);
+            $kategori = [];
+            $penjualan = []; 
+            foreach ($tiket as $key) {
+                $kategori[] = $key->event->nama_event;
+                $penjualan[] = $key->jumlah;
+            }
+
+            $penjualan = array_map('intval', $penjualan);
+
+            // dd($penjualan);
+            return view('akun/profile_pengelola', ['pengelola'=>$pengelola, 'tiket'=>$tiket, 'kategori'=>$kategori, 'penjualan'=>$penjualan]);
             //dd($pengelola->wisata->event);
         }
     }
