@@ -52,7 +52,7 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/register/wisatawan">Sebagai Wisatawan</a>
                     <a class="dropdown-item" href="/register/pengelola">Sebagai Pengelola</a>
-                    <a class="dropdown-item" href="/register/admin">Sebagai Admin</a>
+<!--                     <a class="dropdown-item" href="/register/admin">Sebagai Admin</a> -->
                 </div>
             </div>
 
