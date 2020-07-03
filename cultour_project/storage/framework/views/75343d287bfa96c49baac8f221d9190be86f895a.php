@@ -298,7 +298,7 @@
                   <th scope="col">No</th>
                   <th scope="col">Nama Event</th>
                   <th scope="col">Jumlah Tiket Terjual</th>
-                  <th scope="col">Total Pendapatan</th>
+                  <th scope="col">Total Pendapatan + Biaya Admin</th>
                   <th scope="col">OPSI</th>
                   </tr>
                 </thead>

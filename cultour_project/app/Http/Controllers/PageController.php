@@ -183,7 +183,7 @@ class PageController extends Controller
 
                         $kategori = [];
                         $penjualan = [];
-                                                foreach ($tiket as $key) {
+                        foreach ($tiket as $key) {
                             $kategori[] = $key->event->nama_event;
                             $penjualan[] = $key->jumlah;
                         }

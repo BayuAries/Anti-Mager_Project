@@ -69,13 +69,16 @@ class AkunController extends Controller
     {
         $pesan_error = [
             'required' => ':attribute harus diisi',
-            'max' => ':attribute maksimal harus 16 karakter'
+            'max' => ':attribute maksimal harus 16 karakter',
+            'min' => 'Password minimal 8 karakter',
+            'email'=> 'email@example.com',
+            'unique'=> 'Email Telah digunakan'
         ];
 
         $this->validate($req, [
             'nama' => 'required',
-            'email' => 'required',
-            'password' => 'required|max:16'
+            'email' => 'required|email|unique:akun,email',
+            'password' => 'required|max:16|min:8'
         ], $pesan_error);
 
         if($req->konfirmasi_password == $req->password){
@@ -105,13 +108,16 @@ class AkunController extends Controller
     {
         $pesan_error = [
             'required' => ':attribute harus diisi',
-            'max' => ':attribute maksimal harus 16 karakter'
+            'max' => ':attribute maksimal harus 16 karakter',
+            'min' => 'Password minimal 8 karakter',
+            'email'=> 'email@example.com',
+            'unique'=> 'Email Telah digunakan'
         ];
 
         $this->validate($req, [
             'nama' => 'required',
-            'email' => 'required',
-            'password' => 'required|max:16'
+            'email' => 'required|email|unique:akun,email',
+            'password' => 'required|max:16|min:8'
         ], $pesan_error);
 
         if($req->konfirmasi_password == $req->password){
@@ -258,16 +264,19 @@ class AkunController extends Controller
         $messages = [
             'required' => ':attribute harap diisi',
             'max' => ':attribute maksimal harus 16 karakter',
-            'size' => 'ukuran file terlalu besar'
+            'size' => 'ukuran file terlalu besar',
+            'min' => 'Password minimal 8 karakter',
+            'email'=> 'email@example.com',
+            'unique'=> 'Email Telah digunakan'
         ];
 
         $this->validate($req,[
             'foto_profile' => 'max:2048',
             'nama' => 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique:akun,email',
             'password_akun' => 'required|max:16',
-            'password_baru' => 'max:16',
-            'konfirmasi_password_baru' => 'max:16'
+            'password_baru' => 'required|max:16|min:8',
+            'konfirmasi_password_baru' => 'required|max:16|min:8'
         ], $messages);
 
 
