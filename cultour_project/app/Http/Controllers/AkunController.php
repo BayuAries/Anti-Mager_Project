@@ -275,8 +275,8 @@ class AkunController extends Controller
             'nama' => 'required',
             'email' => 'required|email|unique:akun,email',
             'password_akun' => 'required|max:16',
-            'password_baru' => 'required|max:16|min:8',
-            'konfirmasi_password_baru' => 'required|max:16|min:8'
+            'password_baru' => 'max:16',
+            'konfirmasi_password_baru' => 'max:16'
         ], $messages);
 
 
