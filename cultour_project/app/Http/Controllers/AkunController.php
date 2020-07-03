@@ -180,7 +180,7 @@ class AkunController extends Controller
         $wisata->alamat_wisata = $req->alamat_wisata;
         $wisata->deskripsi_wisata = $req->deskripsi_wisata;
 
-        if($req->htm){
+        if($req->htm_wisata){
             $wisata->htm_wisata = $req->htm;
         }else{
             $wisata->htm_wisata = 'gratis';
