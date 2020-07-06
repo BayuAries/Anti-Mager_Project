@@ -1,3 +1,4 @@
+<?php $__env->startSection('title', 'Daftar Akun User'); ?>
 <?php $__env->startSection('content_admin'); ?>
 
 <div class='row no-gutters justify-content-center'>

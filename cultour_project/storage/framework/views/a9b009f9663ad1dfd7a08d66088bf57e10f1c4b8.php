@@ -1,3 +1,4 @@
+<?php $__env->startSection('title', 'Pengaturan Akun'); ?>
 <?php $__env->startSection('content'); ?>
 
 <center>

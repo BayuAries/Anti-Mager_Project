@@ -262,5 +262,12 @@ class PageController extends Controller
         return view('akun/detail_penjualan', ['tiket'=>$tiket]);
     }
 
+    public function showKeranjang($id)
+    {
+        $tiket = Tiket::find($id);
+        // dd($tiket);
+        return view('akun/detail_pembelian',['tiket'=>$tiket]);
+    }
+
 
 }

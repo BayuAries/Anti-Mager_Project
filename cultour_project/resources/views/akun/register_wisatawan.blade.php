@@ -1,4 +1,5 @@
 @extends('index')
+@section('title', 'Registrasi Wisatawan')
 @section('content')
 
 <div class='row no-gutters justify-content-center'>

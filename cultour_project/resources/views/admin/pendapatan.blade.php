@@ -1,4 +1,5 @@
 @extends('admin/index_admin')
+@section('title', 'Pendapatan')
 @section('content_admin')
 
 <div class='row no-gutters justify-content-center'>

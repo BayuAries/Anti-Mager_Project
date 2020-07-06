@@ -1,3 +1,4 @@
+<?php $__env->startSection('title', 'Pengaturan Wisata Budaya'); ?>
 <?php $__env->startSection('content'); ?>
 
 

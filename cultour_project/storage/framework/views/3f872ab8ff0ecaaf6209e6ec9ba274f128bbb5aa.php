@@ -1,3 +1,4 @@
+<?php $__env->startSection('title', 'Pengaturan Event Budaya'); ?>
 <?php $__env->startSection('content'); ?>
 
 <center>

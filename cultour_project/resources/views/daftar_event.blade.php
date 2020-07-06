@@ -1,4 +1,5 @@
 @extends('index')
+@section('title', 'Daftar Event Wisata Budaya')
 @section('content')
 
 

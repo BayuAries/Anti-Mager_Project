@@ -1,3 +1,4 @@
+<?php $__env->startSection('title', 'Daftar Event Wisata Budaya'); ?>
 <?php $__env->startSection('content'); ?>
 
 

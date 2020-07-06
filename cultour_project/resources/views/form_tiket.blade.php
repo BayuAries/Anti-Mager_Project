@@ -1,4 +1,5 @@
 @extends('index')
+@section('title', 'Form Beli Tiket')
 @section('content')
 
 <!-- #==================================================

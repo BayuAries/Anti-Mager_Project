@@ -1,3 +1,4 @@
+<?php $__env->startSection('title', 'Profile Wisatawan'); ?>
 <?php $__env->startSection('content'); ?>
 
 <div class="jumbotron">
@@ -65,24 +66,35 @@
                       <th scope="col">No</th>
                       <th scope="col">Nama Event</th>
                       <th scope="col">Jumlah Tiket</th>
-                      <th scope="col">Harga Tiket</th>
                       <th scope="col">Total Bayar</th>
                       <th scope="col">Status</th>
+                      <th scope="col">Opsi</th>
                     </tr>
                   </thead>
                   <tbody>
-                  <?php $__currentLoopData = $wisatawan->tiket; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $test => $ranjang): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                  <?php $__currentLoopData = $wisatawan->tiket; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ranjang): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
                       <th scope="row"><?php echo e($loop->iteration); ?></th>
                       <td><?php echo e($ranjang->event->nama_event); ?></td>
                       <td><?php echo e($ranjang->jumlah_tiket); ?></td>
-                      <td><?php echo e($ranjang->harga_tiket); ?></td>
                       <td><?php echo e($ranjang->total_bayar); ?></td>
                       <td><?php echo e($ranjang->status); ?></td>
+                      <td>
+                          <!--tombol buka detail tiket-->
+                        <a class="btn btn-primary" href="/keranjang-detail/<?php echo e($ranjang->id); ?>">DETAIL</a>
+                      </td>
                     </tr>
                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </tbody>
                 </table>
+                <div class="col-lg-12">
+                  <?php if(session('status')): ?>
+                      <div class="alert alert-success my-3">
+                          <?php echo e(session('status')); ?>
+
+                      </div>
+                  <?php endif; ?>
+                </div>
             </div>
 
     </div>

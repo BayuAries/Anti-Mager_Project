@@ -1,4 +1,5 @@
 @extends('index')
+@section('title', 'Pengaturan Event Budaya')
 @section('content')
 
 <center>

@@ -1,4 +1,5 @@
 @extends('index')
+@section('title', 'Detail Penjualan Tiket')
 @section('content')
 
 <!-- #==================================================

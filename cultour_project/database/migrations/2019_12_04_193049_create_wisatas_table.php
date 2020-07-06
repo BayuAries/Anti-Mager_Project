@@ -23,7 +23,7 @@ class CreateWisatasTable extends Migration
             $table->string('jadwal_wisata');
             $table->string('htm_wisata');
             $table->enum('status_wisata',['diterima', 'ditunda']);
-            $table->string('foto_wisata');
+            $table->string('foto_wisata')->nullable();
             $table->timestamps();
         });
     }

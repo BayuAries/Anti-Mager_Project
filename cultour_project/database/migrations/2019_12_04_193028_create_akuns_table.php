@@ -19,7 +19,7 @@ class CreateAkunsTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('role',['admin', 'wisatawan', 'pengelola']);
-            $table->string('foto_profile');
+            $table->string('foto_profile')->nullable();
             $table->timestamps();
         });
     }

@@ -251,6 +251,7 @@ class AdminController extends Controller
     {
         $tiket = Tiket::groupBy('event_id')->selectRaw('event_id ,sum(jumlah_tiket) as jumlah, sum(total_bayar)*0.1 as total')->get();
         // dd($tiket);
+        
         return view('admin.pendapatan',['tiket'=>$tiket]);
     }
 }

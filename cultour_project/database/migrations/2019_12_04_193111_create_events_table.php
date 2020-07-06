@@ -21,12 +21,12 @@ class CreateEventsTable extends Migration
             $table->string('alamat_event');
             $table->text('deskripsi_event');
             $table->date('tanggal_mulai_event');
-            $table->date('tanggal_selesai_event');
+            $table->date('tanggal_selesai_event')->nullable();
             $table->string('htm_event');
             $table->enum('status_event',['belum mulia', 'sedang berlangsung', 'selesai']);
-            $table->integer('kuota');
-            $table->integer('sisa_kuota');
-            $table->string('foto_event');
+            $table->integer('kuota')->nullable();
+            $table->integer('sisa_kuota')->nullable();
+            $table->string('foto_event')->nullable();
             $table->timestamps();
         });
     }

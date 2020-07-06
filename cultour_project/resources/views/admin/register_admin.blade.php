@@ -1,4 +1,5 @@
 @extends('admin/index_admin')
+@section('title', 'Register Admin')
 @section('content_admin')
 
 <h3>Pendaftaran Admin</h3>

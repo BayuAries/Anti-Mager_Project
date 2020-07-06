@@ -1,3 +1,4 @@
+<?php $__env->startSection('title', 'Registrasi Wisatawan'); ?>
 <?php $__env->startSection('content'); ?>
 
 <div class='row no-gutters justify-content-center'>

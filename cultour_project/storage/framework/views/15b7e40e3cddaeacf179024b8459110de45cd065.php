@@ -1,3 +1,4 @@
+<?php $__env->startSection('title', 'Beranda'); ?>
 <?php $__env->startSection('content_admin'); ?>
 
 <div class='row no-gutters justify-content-center'>

@@ -20,7 +20,7 @@ class CreateTiketTable extends Migration
             $table->integer('jumlah_tiket');
             $table->integer('harga_tiket');
             $table->integer('total_bayar');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

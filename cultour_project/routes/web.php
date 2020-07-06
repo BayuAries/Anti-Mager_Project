@@ -224,3 +224,6 @@ Route::get('/pendapatan-admin', 'AdminController@showPendapatan');
 
 Route::get('/show-detail/{id}', 'PageController@showPenjualan');
 
+Route::get('/keranjang-detail/{id}', 'PageController@showKeranjang');
+
+

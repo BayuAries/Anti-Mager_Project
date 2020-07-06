@@ -1,4 +1,5 @@
 @extends('index')
+@section('title', 'Profile Wisatawan')
 @section('content')
 
 <div class="jumbotron">
@@ -66,24 +67,34 @@
                       <th scope="col">No</th>
                       <th scope="col">Nama Event</th>
                       <th scope="col">Jumlah Tiket</th>
-                      <th scope="col">Harga Tiket</th>
                       <th scope="col">Total Bayar</th>
                       <th scope="col">Status</th>
+                      <th scope="col">Opsi</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($wisatawan->tiket as $test => $ranjang)
+                  @foreach($wisatawan->tiket as $ranjang)
                     <tr>
                       <th scope="row">{{$loop->iteration}}</th>
                       <td>{{$ranjang->event->nama_event}}</td>
                       <td>{{$ranjang->jumlah_tiket}}</td>
-                      <td>{{$ranjang->harga_tiket}}</td>
                       <td>{{$ranjang->total_bayar}}</td>
                       <td>{{$ranjang->status}}</td>
+                      <td>
+                          <!--tombol buka detail tiket-->
+                        <a class="btn btn-primary" href="/keranjang-detail/{{ $ranjang->id }}">DETAIL</a>
+                      </td>
                     </tr>
                    @endforeach
                   </tbody>
                 </table>
+                <div class="col-lg-12">
+                  @if (session('status'))
+                      <div class="alert alert-success my-3">
+                          {{ session('status') }}
+                      </div>
+                  @endif
+                </div>
             </div>
 
     </div>

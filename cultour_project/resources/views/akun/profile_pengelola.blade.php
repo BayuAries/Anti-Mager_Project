@@ -1,4 +1,5 @@
 @extends('index')
+@section('title', 'Profile Pengelola')
 @section('content')
 
 <!--profile akun-->

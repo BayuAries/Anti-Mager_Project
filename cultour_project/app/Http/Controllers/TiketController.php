@@ -29,12 +29,12 @@ class TiketController extends Controller
         if($event->sisa_kuota >= $req->jumlah_tiket){
             $messages = [
                 'required' => ':attribute harap diisi',
-                'max' => ':Pembelian maksimal 9 tiket',
+                'max' => ':Pembelian maksimal 99 tiket',
                 'min'=>'Minimal Pembelian 1 tiket'
             ];
             $this->validate($req,[
                 'email' => 'required',
-                'jumlah_tiket' => 'required|max:1|min:1',
+                'jumlah_tiket' => 'required|max:2|min:1',
             ], $messages);
 
             $tiket = new Tiket();
@@ -44,14 +44,14 @@ class TiketController extends Controller
             $tiket->jumlah_tiket = $req->jumlah_tiket;
             $tiket->harga_tiket = $event->htm_event;
             $tiket->total_bayar = $event->htm_event*$req->jumlah_tiket;
-            $tiket->status = 'Pembayaran';
+            $tiket->status = 'Berhasil dibeli';
 
             //kurangi kuota sekarang
             $event->sisa_kuota = $event->sisa_kuota - $req->jumlah_tiket;
 
             $tiket->save();
             $event->save();
-            return redirect('/profile/'.$akun->id);
+            return redirect('/profile/'.$akun->id)->with('status', 'Tiket Berhasil dibeli');
         }elseif ($event->sisa_kuota < $req->jumlah_tiket) {
             return redirect()->back()->with('alert', 'Jumlah kuota tidak mencukupi sisa kuota : '.$event->sisa_kuota);
         }

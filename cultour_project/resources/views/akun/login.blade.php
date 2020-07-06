@@ -1,4 +1,5 @@
 @extends('index')
+@section('title', 'Login')
 @section('content')
 
 <br>

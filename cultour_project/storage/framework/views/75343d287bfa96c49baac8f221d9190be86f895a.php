@@ -1,3 +1,4 @@
+<?php $__env->startSection('title', 'Profile Pengelola'); ?>
 <?php $__env->startSection('content'); ?>
 
 <!--profile akun-->
